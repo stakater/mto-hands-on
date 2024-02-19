@@ -1,0 +1,23 @@
+---
+apiVersion: tenantoperator.stakater.com/v1beta2
+kind: Tenant
+metadata:
+  name: hermes
+spec:
+  editors:
+    users:
+      - leo-alam@nordmart.com
+  namespaces:
+    withTenantPrefix:
+      - fleet-foot
+      - stealth-net      
+  onDelete:
+    cleanAppProject: true
+    cleanNamespaces: false
+  owners:
+    users:
+      - zoe-amir@nordmart.com
+  quota: large
+  viewers:
+    users:
+      - stella-grahn@nordmart.com

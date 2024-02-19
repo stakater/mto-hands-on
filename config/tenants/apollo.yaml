@@ -1,0 +1,41 @@
+---
+apiVersion: tenantoperator.stakater.com/v1beta2
+kind: Tenant
+metadata:
+  name: apollo
+spec:
+  commonMetadata:
+    annotations:
+      stakater.com/annotations: alpha
+    labels:
+      stakater.com/label: alpha
+  editors:
+    users:
+      - ava-li@nordmart.com
+  namespaces:
+    withTenantPrefix:
+      - oracle-hub
+      - solar-tech
+  onDelete:
+    cleanAppProject: true
+    cleanNamespaces: true
+  owners:
+    users:
+      - jasper-eriksson@nordmart.com
+  quota: large
+  specificMetadata:
+    - annotations:
+        stakater.com/annotations-spec: alpha
+      labels:
+        stakater.com/label-spec: alpha
+      namespaces:
+        - oracle-hub
+    - annotations:
+        stakater.com/annotations-spec-2: alpha
+      labels:
+        stakater.com/label-spec-2: alpha
+      namespaces:
+        - solar-tech
+  viewers:
+    users:
+      - milo-chaudhary@nordmart.com

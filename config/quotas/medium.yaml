@@ -1,0 +1,23 @@
+---
+apiVersion: tenantoperator.stakater.com/v1beta1
+kind: Quota
+metadata:
+  name: medium
+spec:
+  limitrange:
+    limits:
+      - max:
+          cpu: '4'
+          memory: 500Mi
+        min:
+          cpu: 200m
+          memory: 100Mi
+        type: Pod
+  resourcequota:
+    hard:
+      configmaps: '100'
+      requests.cpu: '5'
+      requests.memory: 5Gi
+      secrets: '100'
+      services: '100'
+      services.loadbalancers: '2'

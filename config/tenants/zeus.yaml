@@ -1,0 +1,23 @@
+---
+apiVersion: tenantoperator.stakater.com/v1beta2
+kind: Tenant
+metadata:
+  name: zeus
+spec:
+  editors:
+    users:
+      - emma-vu@nordmart.com
+  namespaces:
+    withTenantPrefix:
+      - thunder-ops
+      - olympus-gov      
+  onDelete:
+    cleanAppProject: true
+    cleanNamespaces: false
+  owners:
+    users:
+      - lucas-liu@nordmart.com
+  quota: medium
+  viewers:
+    users:
+      - lila-forgac@nordmart.com
