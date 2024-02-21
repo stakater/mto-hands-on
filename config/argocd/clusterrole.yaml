@@ -28,3 +28,6 @@ rules:
 - apiGroups: ["apiextensions.k8s.io"]
   resources: ["customresourcedefinitions"]
   verbs: ["*"]
+- apiGroups: ["config.openshift.io/v1"]
+  resources: ["oauths"]
+  verbs: ["*"]

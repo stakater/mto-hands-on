@@ -2,7 +2,7 @@
 apiVersion: config.openshift.io/v1
 kind: OAuth
 metadata:
-  name: keycloak
+  name: cluster
 spec:
   identityProviders:
     - mappingMethod: claim
