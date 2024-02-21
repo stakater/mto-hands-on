@@ -1,0 +1,21 @@
+---
+apiVersion: redhatcop.redhat.io/v1alpha1
+kind: GroupSync
+metadata:
+  name: groupsync-instance
+  namespace: mto-hands-on
+spec:
+  providers:
+    - keycloak:
+        credentialsSecret:
+          kind: Secret
+          name: keycloak-group-sync
+          namespace: mto-hands-on
+        insecure: true
+        loginRealm: master
+        realm: mto
+        scope: sub
+        url: >-
+          https://tenant-operator-keycloak-multi-tenant-operator.apps.tno1-ams.s9nghh76.lab.kubeapp.cloud
+      name: keycloak
+  schedule: '*/5 * * * *'
