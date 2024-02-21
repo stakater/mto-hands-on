@@ -73,3 +73,12 @@ Username: mto
 Password: mto
 ```
 
+### Configure keycloak as the Authentication Provider for your OpenShift cluster
+
+From your Keycloak UI, 
+
+1. Create a new client in the MTO realm.
+2. Set the client ID and name to `openshift`.
+3. Follow the on-screen instructions to create the client. Once done, enable the `Client Authentication` and click on `Save`.
+4. Once done, go to the `Credentials` tab and copy the `Secret` value.
+5. Update the `config/oauth/secret.yaml` file with a base64 encoded version of the `Secret` value.
