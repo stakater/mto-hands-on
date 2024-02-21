@@ -1,0 +1,16 @@
+kuberbacproxy:
+  resources:
+    requests:
+      cpu: 100m
+      memory: 20Mi
+    limits:
+      cpu: 100m
+      memory: 20Mi
+manager:
+  resources:
+    requests:
+      cpu: 300m
+      memory: 200Mi
+    limits:
+      cpu: 300m
+      memory: 200Mi

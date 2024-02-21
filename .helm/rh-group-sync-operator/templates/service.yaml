@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    service.alpha.openshift.io/serving-cert-secret-name: group-sync-operator-certs
+  labels:
+    {{- include "rh-group-sync-operator.selectorLabels" . | nindent 4 }}
+  name: group-sync-operator-controller-manager-metrics-service
+  namespace: {{ include "rh-group-sync-operator.namespace" . }}
+spec:
+  ports:
+  - name: https
+    port: 8443
+    targetPort: https
+  selector:
+    {{- include "rh-group-sync-operator.selectorLabels" . | nindent 4 }}

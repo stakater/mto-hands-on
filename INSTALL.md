@@ -10,6 +10,8 @@ Install ArgoCD from OperatorHub. We use Red Hat's version of ArgoCD - OpenShift 
 
 Install MTO from OperatorHub. Search for `Multi Tenant Operator` in OperatorHub and install the operator by following the instructions.
 
+Please refer to this link for more details - https://docs.stakater.com/mto/latest/tutorials/installation.html
+
 Once MTO is installed, search for the CR `IntegrationConfig` and enable the Console and Showback to true:
 
 ```yaml
@@ -70,3 +72,4 @@ Then open the browser and navigate to the above URL. By default, you can login w
 Username: mto
 Password: mto
 ```
+
