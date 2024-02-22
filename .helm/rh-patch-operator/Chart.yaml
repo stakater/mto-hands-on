@@ -3,9 +3,9 @@ name: rh-patch-operator
 description: A Helm chart for rh-patch-operator Managed Addon for SAAP
 type: application 
 dependencies:
-  - name: operators-installer
-    repository: oci://ghcr.io/stakater/charts
-    version: 0.0.7
+  - name: rh-patch-operator
+    repository: https://redhat-cop.github.io/patch-operator
+    version: v0.1.9
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
@@ -14,4 +14,4 @@ version: 0.1.0
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning. They should reflect the version the application is using.
 # It is recommended to use it with quotes.
-appVersion: "0.1.2"
+appVersion: "v0.1.9"
