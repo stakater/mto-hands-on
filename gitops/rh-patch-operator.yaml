@@ -2,13 +2,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: rh-patch-operator
+  name: patch-operator
   namespace: openshift-gitops
 spec:
   project: default
   source:
     repoURL: 'https://redhat-cop.github.io/patch-operator'
-    chart: rh-patch-operator
+    chart: patch-operator
     targetRevision: v0.1.9
   destination:
     server: 'https://kubernetes.default.svc'
