@@ -1,4 +1,3 @@
----
 apiVersion: redhatcop.redhat.io/v1alpha1
 kind: Patch
 metadata:
@@ -8,27 +7,33 @@ spec:
     apiVersion: config.openshift.io/v1
     kind: OAuth
     name: cluster
-  patchTemplate: |
-    spec:
-      identityProviders:
-      - name: mto
-        mappingMethod: claim
-        type: OpenID
-        openID:
-          claims:
-            email:
-            - email
-            name:
-            - name
-            preferredUsername:
-            - email
-            - upn
-          clientID: openshift
-          clientSecret:
-            name: mto-iam-oauth-secret
-          extraAuthorizeParameters:
-            include_granted_scopes: "true"
-          extraScopes:
-          - email
-          - profile
-          issuer: "https://tenant-operator-keycloak-multi-tenant-operator.apps.tno1-ams.s9nghh76.lab.kubeapp.cloud/realms/mto"
+  patches:
+    - patchType: "application/merge-patch+json"
+      patchTemplate: |
+        {
+          "spec": {
+            "identityProviders": [
+              {
+                "name": "mto",
+                "mappingMethod": "claim",
+                "type": "OpenID",
+                "openID": {
+                  "claims": {
+                    "email": ["email"],
+                    "name": ["name"],
+                    "preferredUsername": ["email", "upn"]
+                  },
+                  "clientID": "openshift",
+                  "clientSecret": {
+                    "name": "mto-iam-oauth-secret"
+                  },
+                  "extraAuthorizeParameters": {
+                    "include_granted_scopes": "true"
+                  },
+                  "extraScopes": ["email", "profile"],
+                  "issuer": "https://tenant-operator-keycloak-multi-tenant-operator.apps.tno1-ams.s9nghh76.lab.kubeapp.cloud/realms/mto"
+                }
+              }
+            ]
+          }
+        }
