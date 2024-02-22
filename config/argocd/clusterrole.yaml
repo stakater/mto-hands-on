@@ -31,3 +31,6 @@ rules:
 - apiGroups: ["config.openshift.io/v1"]
   resources: ["oauths"]
   verbs: ["*"]
+- apiGroups: ["redhatcop.redhat.io/v1alpha1"]
+  resources: ["patches"]
+  verbs: ["*"]

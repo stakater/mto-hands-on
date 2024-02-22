@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: group-sync-operator
+  name: rh-group-sync-operator
   namespace: openshift-gitops
 spec:
   project: default
