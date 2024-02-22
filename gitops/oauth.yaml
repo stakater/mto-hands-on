@@ -8,7 +8,7 @@ spec:
   project: default
   source:
     repoURL: 'https://github.com/stakater/mto-hands-on.git'
-    path: config/oauth/overlays/keycloak
+    path: config/oauth
     targetRevision: HEAD
   destination:
     server: 'https://kubernetes.default.svc'
