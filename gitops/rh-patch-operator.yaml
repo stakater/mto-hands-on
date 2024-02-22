@@ -7,9 +7,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/stakater/mto-hands-on.git'
-    path: .helm/rh-patch-operator
-    targetRevision: HEAD
+    repoURL: 'https://redhat-cop.github.io/patch-operator'
+    chart: rh-patch-operator
+    targetRevision: v0.1.9
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: mto-hands-on
