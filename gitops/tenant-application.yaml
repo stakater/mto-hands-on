@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: tenant-application
-  namespace: openshift-gitops
+  namespace: rh-openshift-gitops-instance
 spec:
   project: default
   source:

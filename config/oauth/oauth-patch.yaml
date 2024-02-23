@@ -3,37 +3,35 @@ kind: Patch
 metadata:
   name: oauth-identity-provider-patch
 spec:
-  targetRef:
-    apiVersion: config.openshift.io/v1
-    kind: OAuth
-    name: cluster
+  serviceAccountRef:
+    name: default
   patches:
-    - patchType: "application/merge-patch+json"
+    oauth-identity-provider-patch:
+      targetObjectRef:
+        apiVersion: config.openshift.io/v1
+        kind: OAuth
+        name: cluster
       patchTemplate: |
-        {
-          "spec": {
-            "identityProviders": [
-              {
-                "name": "mto",
-                "mappingMethod": "claim",
-                "type": "OpenID",
-                "openID": {
-                  "claims": {
-                    "email": ["email"],
-                    "name": ["name"],
-                    "preferredUsername": ["email", "upn"]
-                  },
-                  "clientID": "openshift",
-                  "clientSecret": {
-                    "name": "mto-iam-oauth-secret"
-                  },
-                  "extraAuthorizeParameters": {
-                    "include_granted_scopes": "true"
-                  },
-                  "extraScopes": ["email", "profile"],
-                  "issuer": "https://tenant-operator-keycloak-multi-tenant-operator.apps.tno1-ams.s9nghh76.lab.kubeapp.cloud/realms/mto"
-                }
-              }
-            ]
-          }
-        }
+        spec:
+          identityProviders:
+            - name: mto
+              mappingMethod: claim
+              type: OpenID
+              openID:
+                claims:
+                  email: ["email"]
+                  name: ["name"]
+                  preferredUsername: ["email", "upn"]
+                clientID: "openshift"
+                clientSecret:
+                  name: "mto-iam-oauth-secret"
+                extraAuthorizeParameters:
+                  include_granted_scopes: "true"
+                extraScopes: ["email", "profile"]
+                issuer: "https://tenant-operator-keycloak-multi-tenant-operator.apps.tno1-ams.s9nghh76.lab.kubeapp.cloud/realms/mto"
+      patchType: application/merge-patch+json
+      sourceObjectRefs:
+        - apiVersion: v1
+          kind: Secret
+          name: mto-iam-oauth-secret
+          namespace: openshift-config
