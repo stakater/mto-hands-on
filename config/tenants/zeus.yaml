@@ -17,6 +17,7 @@ spec:
   owners:
     users:
       - lucas-liu@nordmart.com
+      - mto@stakater.com
   quota: medium
   viewers:
     users:

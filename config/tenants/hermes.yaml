@@ -17,6 +17,7 @@ spec:
   owners:
     users:
       - zoe-amir@nordmart.com
+      - mto@stakater.com
   quota: large
   viewers:
     users:
