@@ -1,10 +1,46 @@
+---
+kind: ServiceAccount
+apiVersion: v1
+metadata:
+  name: patch-operator-sa
+  namespace: {{ include "patch-operator.namespace" . }}
+---
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: patch-operator-role
+rules:
+  - verbs:
+      - get
+      - list 
+      - watch
+      - update
+      - patch
+    apiGroups:
+      - config.openshift.io/v1
+    resources:
+      - oauths
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: patch-operator-rolebinding
+subjects:
+  - kind: ServiceAccount
+    name: patch-operator-sa
+    namespace: {{ include "patch-operator.namespace" . }}
+roleRef:
+  kind: ClusterRole
+  name: patch-operator-role
+  apiGroup: rbac.authorization.k8s.io
+---
 apiVersion: redhatcop.redhat.io/v1alpha1
 kind: Patch
 metadata:
   name: oauth-identity-provider-patch
 spec:
   serviceAccountRef:
-    name: default
+    name: patch-operator-sa
   patches:
     oauth-identity-provider-patch:
       targetObjectRef:
