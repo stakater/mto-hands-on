@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: quota-application
-  namespace: rh-openshift-gitops-instance
+  namespace: openshift-gitops
 spec:
   project: default
   source:
