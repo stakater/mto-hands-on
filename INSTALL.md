@@ -28,6 +28,12 @@ oc apply -f config/argocd/clusterrole.yaml
 oc apply -f config/argocd/clusterrolebinding.yaml
 ```
 
+Create a new namespace which we would be using throughout the hands-on:
+
+```bash
+oc new-project mto-hands-on
+```
+
 ### Quick Start
 
 Once the pre-requisites are installed, follow these steps to install the ArgoCD Application for MTO Hands-on.
