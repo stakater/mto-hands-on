@@ -37,7 +37,7 @@ mto-hands-on/
 - `gitops` directory contains the ArgoCD application resources.  
 - `argocd` directory contains the parent ArgoCD application for MTO Hands-on.
 
-### Step 2: Define your New Tenant
+#### Step 2: Define your New Tenant
 
 To add a new tenant named `poseidon`, create `config/tenants/poseidon.yaml` with the following configuration:
 
@@ -67,11 +67,11 @@ spec:
       - marina-coast@nordmart.com
 ```
 
-### Step 3: Define a new Quota / Use an existing Quota
+#### Step 3: Define a new Quota / Use an existing Quota
 
 You could either create a new Quota or use an existing one. For this tutorial, we will use an existing quota named [`medium`](../config/quotas/medium.yaml).
 
-### Step 4: Create a Pull Request
+#### Step 4: Create a Pull Request
 
 Branch off, commit your new tenant configuration, and push the changes:
 
@@ -83,11 +83,11 @@ git push origin add-poseidon-tenant
 ```
 Finally, create a pull request against the `main` branch for review.
 
-### Step 5: Merge the Pull Request
+#### Step 5: Merge the Pull Request
 
 This step provides control to the maintainers to review the changes before they are applied on the cluster. Once the pull request is merged, ArgoCD application will automatically pick up the changes and apply them to the cluster.
 
-### Step 6: Verify the Changes
+#### Step 6: Verify the Changes
 
 You can verify the changes by navigating to the `Applications` tab in the ArgoCD Console. Make sure the new tenant (& quota) are created successfully.
 
