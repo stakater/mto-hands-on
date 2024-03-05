@@ -6,16 +6,17 @@ metadata:
 spec:
   commonMetadata:
     annotations:
-      stakater.com/annotations: alpha
+      stakater.com/annotations: apollo
     labels:
-      stakater.com/label: alpha
+      stakater.com/label: apollo
   editors:
     users:
       - ava-li@nordmart.com
   namespaces:
     withTenantPrefix:
-      - oracle-hub
-      - solar-tech
+      - build
+      - dev
+      - prod
   onDelete:
     cleanAppProject: true
     cleanNamespaces: true
@@ -26,17 +27,17 @@ spec:
   quota: large
   specificMetadata:
     - annotations:
-        stakater.com/annotations-spec: alpha
+        stakater.com/annotations-spec: apollo
       labels:
-        stakater.com/label-spec: alpha
+        stakater.com/label-spec: apollo
       namespaces:
-        - oracle-hub
+        - build
     - annotations:
-        stakater.com/annotations-spec-2: alpha
+        stakater.com/annotations-spec-2: apollo
       labels:
-        stakater.com/label-spec-2: alpha
+        stakater.com/label-spec-2: apollo
       namespaces:
-        - solar-tech
+        - dev
   viewers:
     users:
       - milo-chaudhary@nordmart.com

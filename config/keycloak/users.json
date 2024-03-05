@@ -1,0 +1,121 @@
+{
+  "users": [
+    {
+      "username": "ava-li",
+      "email": "ava-li@nordmart.com",
+      "enabled": true,
+      "emailVerified": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "qwerty",
+          "temporary": false
+        }
+      ]
+    },
+    {
+      "username": "jasper-eriksson",
+      "email": "jasper-eriksson@nordmart.com",
+      "enabled": true,
+      "emailVerified": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "qwerty",
+          "temporary": false
+        }
+      ]
+    },
+    {
+      "username": "milo-chaudhary",
+      "email": "milo-chaudhary@nordmart.com",
+      "enabled": true,
+      "emailVerified": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "qwerty",
+          "temporary": false
+        }
+      ]
+    },
+    {
+      "username": "leo-alam",
+      "email": "leo-alam@nordmart.com",
+      "enabled": true,
+      "emailVerified": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "qwerty",
+          "temporary": false
+        }
+      ]
+    },
+    {
+      "username": "zoe-amir",
+      "email": "zoe-amir@nordmart.com",
+      "enabled": true,
+      "emailVerified": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "qwerty",
+          "temporary": false
+        }
+      ]
+    },
+    {
+      "username": "stella-grahn",
+      "email": "stella-grahn@nordmart.com",
+      "enabled": true,
+      "emailVerified": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "qwerty",
+          "temporary": false
+        }
+      ]
+    },
+    {
+      "username": "emma-vu",
+      "email": "emma-vu@nordmart.com",
+      "enabled": true,
+      "emailVerified": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "qwerty",
+          "temporary": false
+        }
+      ]
+    },
+    {
+      "username": "lucas-liu",
+      "email": "lucas-liu@nordmart.com",
+      "enabled": true,
+      "emailVerified": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "qwerty",
+          "temporary": false
+        }
+      ]
+    },
+    {
+      "username": "lila-forgac",
+      "email": "lila-forgac@nordmart.com",
+      "enabled": true,
+      "emailVerified": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "qwerty",
+          "temporary": false
+        }
+      ]
+    }
+  ]
+}

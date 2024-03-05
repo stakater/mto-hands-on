@@ -9,8 +9,9 @@ spec:
       - emma-vu@nordmart.com
   namespaces:
     withTenantPrefix:
-      - thunder-ops
-      - olympus-gov      
+      - dev
+      - stage
+      - prod
   onDelete:
     cleanAppProject: true
     cleanNamespaces: false

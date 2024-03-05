@@ -7,9 +7,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/stakater/mto-hands-on.git'
-    path: .helm/rh-group-sync-operator
-    targetRevision: HEAD
+    repoURL: 'https://redhat-cop.github.io/group-sync-operator'
+    chart: group-sync-operator
+    targetRevision: v0.0.28
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: mto-hands-on

@@ -9,8 +9,9 @@ spec:
       - leo-alam@nordmart.com
   namespaces:
     withTenantPrefix:
-      - fleet-foot
-      - stealth-net      
+      - build
+      - dev
+      - stage
   onDelete:
     cleanAppProject: true
     cleanNamespaces: false
