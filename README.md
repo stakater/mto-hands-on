@@ -24,14 +24,6 @@ components:
     showback: true
 ```
 
-Once both the operators are installed, you need to apply the following role to the `openshift-gitops-argocd-application-controller` service account to allow ArgoCD to create multi-tenant operator's custom resources.
-
-```bash
-oc apply -f config/argocd/clusterrole.yaml
-
-oc apply -f config/argocd/clusterrolebinding.yaml
-```
-
 Create a new namespace which we would be using throughout the hands-on:
 
 ```bash

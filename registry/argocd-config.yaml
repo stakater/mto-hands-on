@@ -1,0 +1,19 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-rbac
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/stakater/mto-hands-on.git'
+    path: registry/components/argocd/rbac
+    targetRevision: HEAD
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: mto-hands-on
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
