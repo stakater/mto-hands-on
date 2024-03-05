@@ -2,13 +2,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: group-sync
+  name: group-sync-config
   namespace: openshift-gitops
 spec:
   project: default
   source:
     repoURL: 'https://github.com/stakater/mto-hands-on.git'
-    path: config/group-sync-operator
+    path: registry/components/group-sync-config
     targetRevision: HEAD
   destination:
     server: 'https://kubernetes.default.svc'

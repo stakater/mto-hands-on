@@ -2,13 +2,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: oauth
+  name: patch-operator
   namespace: openshift-gitops
 spec:
   project: default
   source:
     repoURL: 'https://github.com/stakater/mto-hands-on.git'
-    path: config/oauth
+    path: registry/components/patch-operator
     targetRevision: HEAD
   destination:
     server: 'https://kubernetes.default.svc'
@@ -17,5 +17,3 @@ spec:
     automated:
       selfHeal: true
       prune: true
-    syncOptions:
-    - ServerSideApply=true

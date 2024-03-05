@@ -1,0 +1,19 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mto-quotas
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/stakater/mto-hands-on.git'
+    path: registry/components/mto-config/quotas
+    targetRevision: HEAD
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: mto-hands-on
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true

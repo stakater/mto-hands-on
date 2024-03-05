@@ -1,13 +1,14 @@
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: tenant-application
+  name: mto-tenants
   namespace: openshift-gitops
 spec:
   project: default
   source:
     repoURL: 'https://github.com/stakater/mto-hands-on.git'
-    path: config/tenants
+    path: registry/components/mto-config/tenants
     targetRevision: HEAD
   destination:
     server: 'https://kubernetes.default.svc'
