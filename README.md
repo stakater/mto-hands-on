@@ -66,13 +66,13 @@ oc apply -f argocd/mto-hands-on.yaml
 Once the ArgoCD Application is installed, you can access the GitOps Console by following these steps:
 
 ```bash
-oc get route openshift-gitops-server -n openshift-gitops
+oc get route rh-openshift-gitops-instance-server -n rh-openshift-gitops-instance
 ```
 
 To get the password, run the following command:
 
 ```bash
-oc get secret openshift-gitops-cluster -n openshift-gitops -o jsonpath='{.data.admin\.password}' | base64 -d
+oc get secret rh-openshift-gitops-instance-cluster -n rh-openshift-gitops-instance -o jsonpath='{.data.admin\.password}' | base64 -d
 ```
 
 Then open the browser and login to the above URL with the following credentials:

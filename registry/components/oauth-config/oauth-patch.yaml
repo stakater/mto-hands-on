@@ -5,7 +5,7 @@ metadata:
   name: oauth-identity-provider-patch
 spec:
   serviceAccountRef:
-    name: openshift-gitops-argocd-application-controller
+    name: rh-openshift-gitops-instance-argocd-application-controller
   patches:
     oauth-identity-provider-patch:
       targetObjectRef:

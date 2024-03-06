@@ -5,8 +5,8 @@ metadata:
   name: argocd-mto-manager-binding
 subjects:
 - kind: ServiceAccount
-  name: openshift-gitops-argocd-application-controller
-  namespace: openshift-gitops
+  name: rh-openshift-gitops-instance-argocd-application-controller
+  namespace: rh-openshift-gitops-instance
 roleRef:
   kind: ClusterRole
   name: argocd-mto-manager
